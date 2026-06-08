@@ -1,0 +1,50 @@
+[build-system]
+# Setuptools is the standard rock-solid backend for editable installs
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "relativistic-ray-tracer"
+version = "0.1.0"
+
+description = "A GPU-accelerated General Relativistic ray tracer for Schwarzschild spacetimes."
+readme = "README.md"
+requires-python = ">=3.9"
+
+# Classifiers help package managers understand the environment requirements
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Environment :: GPU :: NVIDIA CUDA",
+]
+
+# Core dependencies required to run the physics engine
+dependencies = [
+    "numpy",
+    "cupy-cuda12x", # Ensure this aligns with your specific CUDA version (e.g., cupy-cuda11x or cupy-cuda12x)
+    "PyYAML",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+# Dependencies only needed for testing and development
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",       # Blazing fast modern Python linter/formatter
+]
+
+[tool.setuptools.packages.find]
+# Explicitly tells the build system where your actual package code lives
+where = ["."]
+include = ["raytracer"]
+
+[tool.pytest.ini_options]
+# Automatically configures pytest when you run `python -m pytest`
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.ruff]
+# Professional formatting standards yay
+line-length = 88

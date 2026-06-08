@@ -1,0 +1,92 @@
+#################################
+# Python basics
+#################################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.pyc
+
+#################################
+# Virtual environments
+#################################
+.venv/
+venv/
+env/
+ENV/
+
+#################################
+# IDE / editor settings
+#################################
+.vscode/
+.idea/
+*.swp
+
+#################################
+# OS files
+#################################
+.DS_Store
+Thumbs.db
+
+#################################
+# Logs / outputs / experiments
+#################################
+logs/
+outputs/
+runs/
+checkpoints/
+experiments/
+notes/
+
+#################################
+# ML / PyTorch artifacts
+#################################
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+#################################
+# Datasets (optional but common)
+#################################
+data/
+datasets/
+*.csv
+*.npz
+*.h5
+
+# (If you want to track configs but not generated ones)
+configs/generated/
+
+#################################
+# Jupyter notebooks (optional)
+#################################
+.ipynb_checkpoints/
+
+#################################
+# Testing / caching
+#################################
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+#################################
+# Environment variables / secrets
+#################################
+.env
+.env.*
+
+#################################
+# Packaging
+#################################
+*.egg-info/
+build/
+dist/
+
+#################################
+# Type-Checking
+#################################
+.mypy_cache/

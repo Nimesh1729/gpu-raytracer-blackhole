@@ -1,0 +1,18 @@
+# configs/config.yaml
+simulation:
+  backend: "cupy"
+  step_size: 0.05          # Increased slightly so rays travel further per step
+  max_steps: 4000          # Total max reach: 4000 * 0.05 = 200 units (plenty of distance!)
+  tolerance: 1e-5
+  r_inner: 3.0             # Freeze safely at the photon sphere
+  r_outer: 70.0            # Escape threshold boundary
+
+camera:
+  width: 1024
+  height: 768
+  fov_deg: 60.0            # Adjusted to a standard professional viewing window
+  r_cam: 15.0              # Pulled the camera back to r=15 for a wider perspective
+
+physics:
+  mass: 1.0
+  is_kerr: false
